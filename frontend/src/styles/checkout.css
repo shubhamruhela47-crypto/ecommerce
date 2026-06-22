@@ -1,0 +1,122 @@
+/* ========================= */
+
+.checkout-container {
+  min-height: 100vh;
+  background: #000;
+  padding: 40px 20px;
+}
+
+/* ========================= */
+
+.breadcrumb {
+  width: 600px;
+  margin: 0 auto 25px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  color: #ff7a1a;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= */
+
+.checkout-box {
+  width: 600px;
+  margin: auto;
+
+  background: #181818;
+
+  padding: 30px;
+
+  border-radius: 10px;
+
+  border: 1px solid #171717;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================= */
+
+.checkout-box input {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 15px;
+
+  background: #000;
+
+  color: #fff;
+
+  border: 1px solid #222;
+
+  border-radius: 6px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.checkout-box input:focus {
+  border-color: #ff7a1a;
+}
+
+/* ========================= */
+
+.checkout-box hr {
+  border: 1px solid #202020;
+
+  margin: 30px 0;
+}
+
+/* ========================= */
+
+.checkout-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+/* ========================= */
+
+.checkout-footer h2 {
+  color: #ff7a1a;
+
+  font-size: 30px;
+}
+
+/* ========================= */
+
+.checkout-footer button {
+  padding: 13px 35px;
+
+  background: #ff7a1a;
+
+  color: #fff;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.checkout-footer button:hover {
+  background: #ff5c00;
+}
+
+/* ========================= */

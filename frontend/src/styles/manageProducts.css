@@ -1,0 +1,98 @@
+.manage-products {
+  background: white; /* outer background */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Top bar styling */
+.manage-products .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Inner container effect (grey area) */
+.manage-products table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #232323; /* inner grey background */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table header */
+.manage-products th {
+  background: #070707;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Table cells */
+.manage-products td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Image styling */
+.manage-products img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.edit-btn {
+  margin-right: 10px;
+  padding: 6px 10px;
+  background: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delete-btn {
+  padding: 6px 10px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add button */
+.add-btn {
+  padding: 8px 12px;
+  background: #f37921;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  margin-top: 50px;
+}
+.edit-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #ff902e;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+.manage-products tbody tr:hover {
+  background: #5a5858; /* row hover grey highlight */
+  transition: 0.2s ease;
+}

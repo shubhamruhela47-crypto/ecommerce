@@ -1,0 +1,94 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  background-color: #111;
+  border-bottom: 1px solid #222;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  color: #ff7a00;
+  text-decoration: none;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Logo Image */
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Nav Links */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Link Style */
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 1rem;
+  padding: 0.6rem 0.8rem;
+
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Hover / Focus Effect */
+.navbar-links li a:hover {
+  color: #ff7a00;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Logout Button */
+
+.btn-logout {
+  padding: 0.5rem 0.8rem;
+  border: none;
+
+  background: #ff7a00;
+  color: white;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  opacity: 0.9;
+}
+.logo-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+}

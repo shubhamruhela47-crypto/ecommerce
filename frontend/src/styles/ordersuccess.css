@@ -1,0 +1,48 @@
+.success-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafb;
+}
+
+.success-box {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.check-icon {
+  font-size: 50px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.success-box h1 {
+  margin: 10px 0;
+}
+
+.success-box p {
+  color: #666;
+}
+
+.success-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 15px;
+  background: #f97316;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.btn.secondary {
+  background: #333;
+}

@@ -1,0 +1,81 @@
+.manage-orders {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 40px;
+}
+
+/* Heading */
+
+.manage-orders h1 {
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Table Container */
+
+.manage-orders table {
+  width: 100%;
+  background: #1c1d1d;
+  border-radius: 12px;
+  overflow: hidden;
+  border-collapse: collapse;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+
+.manage-orders thead {
+  background: #010101;
+}
+
+.manage-orders thead th {
+  color: white;
+  padding: 18px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Body */
+
+.manage-orders tbody td {
+  padding: 18px;
+  color: white;
+  border-bottom: 1px solid #4b5563;
+}
+
+.manage-orders tbody tr:hover {
+  background: #5d5e5e;
+}
+
+/* Status Dropdown */
+
+.manage-orders select {
+  width: 150px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #060606;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.manage-orders select:hover {
+  background: #3c3c3d;
+}
+
+/* Loading */
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  color: #222;
+  font-size: 28px;
+  font-weight: bold;
+}
+
