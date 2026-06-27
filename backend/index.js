@@ -4,22 +4,14 @@ const dotenv = require("dotenv");
 const path = require("path");
 const connectDB = require("./config/db");
 
-// Load environment variables
-dotenv.config({ path: path.join(__dirname, ".env") });
-
-// Connect to Database
+dotenv.config();
 connectDB();
 
 const app = express();
 
-// Set CORS for frontend URL / allow single-node deploy (जैसा नए स्क्रीनशॉट में है)
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://127.0.0.1:3000",
-      process.env.FRONTEND_URL,
-    ],
+    origin: ["http://localhost:3000", process.env.FRONTEND_URL],
     credentials: true,
   }),
 );
@@ -27,31 +19,27 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve uploaded images/static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// API Routes
+// routes
 app.use("/api/auth", require("./routes/authroutes"));
 app.use("/api/products", require("./routes/productroutes"));
 app.use("/api/orders", require("./routes/ordersroutes"));
-app.use("/api/payment", require("./routes/paymentroutes.js"));
-app.use("/api/analytics", require("./routes/analysesroutes")); // वीडियो के अनुसार 'analytics' किया गया
+app.use("/api/payment", require("./routes/paymentroutes"));
+app.use("/api/analytics", require("./routes/analysesroutes"));
 
-// Serve frontend in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+// health route
+app.get("/", (req, res) => {
+  res.json({ message: "API running" });
+});
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("ShopNest API is running in Development mode...");
-  });
-}
+// SAFE 404 HANDLER (NO "*")
+app.use((req, res) => {
+  res.status(404).json({ message: "Not Found" });
+});
 
-// Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(` server is running on port ${PORT} `);
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("Server running on", PORT);
 });
