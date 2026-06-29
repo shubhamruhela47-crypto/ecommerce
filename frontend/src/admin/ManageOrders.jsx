@@ -10,7 +10,7 @@ const ManageOrders = () => {
 
   const fetchOrders = useCallback(async () => {
     try {
-      const res = await fetch("/api/orders", {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/orders`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -34,7 +34,7 @@ const ManageOrders = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      const res = await fetch(`/api/orders/${id}`, {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/orders/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
