@@ -40,7 +40,7 @@ const Checkout = () => {
         paymentMode: "bypass",
       });
 
-      const saveOrderRes = await fetch("/api/orders", {
+const saveOrderRes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const Checkout = () => {
   // ✅ RAZORPAY PAYMENT
   const handlePayment = async () => {
     try {
-      const orderRes = await fetch("/api/payment/order", {
+const orderRes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payment/order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: totalPrice }),
@@ -150,7 +150,7 @@ const Checkout = () => {
 
         handler: async function (response) {
           try {
-            const verifyRes = await fetch("/api/payment/verify", {
+            const verifyRes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(response),
@@ -160,8 +160,7 @@ const Checkout = () => {
               alert("Payment verification failed");
               return;
             }
-
-            const saveOrderRes = await fetch("/api/orders", {
+const saveOrderRes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/orders`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
