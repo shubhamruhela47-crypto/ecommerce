@@ -9,7 +9,7 @@ const UsersDirectory = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("/api/auth/users", {
+       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/users`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -30,7 +30,7 @@ const UsersDirectory = () => {
 
   const deleteUser = async (id) => {
     try {
-      const res = await fetch(`/api/auth/users/${id}`, {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/users/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${user.token}`,
