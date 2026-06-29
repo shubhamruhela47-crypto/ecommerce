@@ -1,11 +1,7 @@
 const express = require('express');
-
 const router = express.Router();
-
 const { protect } = require('../middlewere/authmiddlewere');
-
 const { admin } = require("../middlewere/adminmiddlewere");
-
 const {
     getproducts,
     getproductbyid,
@@ -13,12 +9,11 @@ const {
     deleteproduct,
     createproduct
 } = require("../controller/productcontroller.js");
-
 const multer = require('multer');
 
-const upload = multer({
-    dest: 'uploads/'
-});
+// ✅ Memory storage — Vercel pe disk nahi hota
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 router.route('/')
     .get(getproducts)
