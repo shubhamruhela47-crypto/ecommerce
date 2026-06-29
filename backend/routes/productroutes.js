@@ -11,31 +11,16 @@ const {
 } = require("../controller/productcontroller.js");
 const multer = require('multer');
 
-// ✅ Memory storage — Vercel pe disk nahi hota
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 router.route('/')
     .get(getproducts)
-    .post(
-        protect,
-        admin,
-        upload.any(),
-        createproduct
-    );
+    .post(protect, admin, upload.any(), createproduct);
 
 router.route('/:id')
     .get(getproductbyid)
-    .put(
-        protect,
-        admin,
-        upload.any(),
-        updateproduct
-    )
-    .delete(
-        protect,
-        admin,
-        deleteproduct
-    );
+    .put(protect, admin, upload.any(), updateproduct)
+    .delete(protect, admin, deleteproduct);
 
 module.exports = router;
