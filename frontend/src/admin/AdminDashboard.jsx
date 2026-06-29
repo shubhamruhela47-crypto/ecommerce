@@ -17,7 +17,7 @@ const AdminDashboard = () => {
 
     const fetchStats = async () => {
       try {
-        const res = await fetch("/api/analytics", {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/analytics`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
