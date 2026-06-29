@@ -8,12 +8,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+  const backend = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch(`${backend}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

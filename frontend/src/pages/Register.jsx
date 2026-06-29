@@ -8,12 +8,13 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  const backend = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch(`${backend}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
