@@ -15,7 +15,7 @@ const MyProfile = () => {
       return;
     }
 
-    fetch("/api/orders/myorders", {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/orders/myorders`, {
       headers: {
         Authorization: `Bearer ${user.token}`,
       },
