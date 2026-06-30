@@ -1,7 +1,6 @@
 /* ==========================
    ADD PRODUCT PAGE
 ========================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,6 @@
 .add-product-page {
   min-height: 100vh;
   background: #ebe9e9;
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -35,7 +33,6 @@
 }
 
 /* Form */
-
 .add-product-box form {
   display: flex;
   flex-direction: column;
@@ -43,7 +40,6 @@
 }
 
 /* Labels */
-
 .input-group {
   display: flex;
   flex-direction: column;
@@ -57,7 +53,6 @@
 }
 
 /* Inputs */
-
 .input-group input,
 .input-group textarea,
 .input-group select {
@@ -85,7 +80,6 @@
 }
 
 /* Two Column */
-
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -93,7 +87,6 @@
 }
 
 /* File Upload */
-
 .file-upload {
   border: 2px dashed #4b5563;
   padding: 30px;
@@ -110,7 +103,6 @@
 }
 
 /* Button */
-
 .add-product-box button {
   width: 100%;
   padding: 15px;
@@ -130,7 +122,6 @@
 }
 
 /* Preview */
-
 .image-preview {
   margin-top: 10px;
   display: flex;
@@ -144,3 +135,56 @@
   border-radius: 12px;
   border: 2px solid #374151;
 }
+
+/* ==========================
+   MEDIA QUERIES — RESPONSIVE
+========================== */
+
+/* Tablet (max 768px) */
+@media (max-width: 768px) {
+  .add-product-page {
+    padding: 25px 15px;
+  }
+
+  .add-product-box {
+    padding: 25px;
+    border-radius: 12px;
+  }
+
+  .add-product-box h1 {
+    font-size: 26px;
+    margin-bottom: 22px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+  .add-product-page {
+    padding: 15px 10px;
+  }
+
+  .add-product-box {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .add-product-box h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .input-group label {
+    font-size: 14px;
+  }
+
+  .input-group input,
+  .input-group textarea,
+  .input-group select {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
