@@ -1,7 +1,6 @@
 /* ===========================
    ADMIN DASHBOARD
 =========================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +15,6 @@
 }
 
 /* Header */
-
 .admin-header {
   margin-bottom: 35px;
 }
@@ -35,7 +33,6 @@
 /* ===========================
    Statistics Cards
 =========================== */
-
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -83,7 +80,6 @@
 /* ===========================
    Controls
 =========================== */
-
 .controls h2 {
   font-size: 28px;
   margin-bottom: 25px;
@@ -127,3 +123,108 @@
   line-height: 1.6;
 }
 
+/* ==========================
+   MEDIA QUERIES — RESPONSIVE
+========================== */
+
+/* Tablet (max 768px) */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 25px;
+  }
+
+  .admin-header h1 {
+    font-size: 26px;
+  }
+
+  .admin-header p {
+    font-size: 14px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-card h2 {
+    font-size: 26px;
+  }
+
+  .controls h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .control-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .control-card {
+    padding: 18px;
+  }
+
+  .control-card span {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .control-card h3 {
+    font-size: 19px;
+  }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+  .admin-page {
+    padding: 15px;
+  }
+
+  .admin-header h1 {
+    font-size: 22px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card h2 {
+    font-size: 22px;
+  }
+
+  .stat-card p {
+    font-size: 13px;
+  }
+
+  .control-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .control-card {
+    padding: 16px;
+  }
+
+  .control-card span {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .control-card h3 {
+    font-size: 18px;
+  }
+
+  .control-card p {
+    font-size: 14px;
+  }
+}
