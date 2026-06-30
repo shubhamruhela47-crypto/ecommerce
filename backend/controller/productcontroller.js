@@ -21,7 +21,7 @@ const uploadProductImage = async (file) => {
 
     if (statusCode === 401 || statusCode === 403) {
       const cloudinaryError = new Error(
-        "Cloudinary upload failed. Please check CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET in backend/.env.",
+        "Cloudinary upload failed. Please check CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET in backend/.env."
       );
       cloudinaryError.statusCode = 502;
       throw cloudinaryError;
@@ -53,4 +53,9 @@ const getproductbyid = async (req, res) => {
       res.status(404).json({ message: "Product not found" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Server
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+const createproduct = async (req, res) => {
+  const { name,
