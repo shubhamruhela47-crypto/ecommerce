@@ -58,4 +58,101 @@ const getproductbyid = async (req, res) => {
 };
 
 const createproduct = async (req, res) => {
-  const { name,
+  const { name, description, price, category, stock } = req.body;
+
+  try {
+    if (!name || !description || !price || !category || !stock) {
+      return res.status(400).json({
+        message: "name, description, price, category, and stock are required."
+      });
+    }
+
+    const file = req.file || (req.files && req.files[0]);
+
+    if (!file) {
+      return res.status(400).json({
+        message: "Product image is required. Send a multipart/form-data file under any field name."
+      });
+    }
+
+    const imagesUrl = await uploadProductImage(file);
+
+    const product = new Product({
+      name,
+      description,
+      price,
+      category,
+      stock,
+      imagesUrl
+    });
+    const saveproduct = await product.save();
+    res.status(201).json(saveproduct);
+  } catch (error) {
+    console.error("Create product error:", error.message);
+    res.status(error.statusCode || 500).json({
+      message: error.message || "Server Error"
+    });
+  }
+};
+
+const updateproduct = async (req, res) => {
+  try {
+    const { name, description, price, category, stock } = req.body;
+
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      return res.status(400).json({ message: "Invalid product id" });
+    }
+
+    const product = await Product.findById(req.params.id);
+
+    if (product) {
+      product.name = name || product.name;
+      product.description = description || product.description;
+      product.price = price || product.price;
+      product.category = category || product.category;
+      product.stock = stock || product.stock;
+
+      const file = req.file || (req.files && req.files[0]);
+      if (file) {
+        product.imagesUrl = await uploadProductImage(file);
+      }
+
+      const updatedproduct = await product.save();
+      res.json(updatedproduct);
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    console.error("Update product error:", error.message);
+    res.status(error.statusCode || 500).json({
+      message: error.message || "Server Error"
+    });
+  }
+};
+
+const deleteproduct = async (req, res) => {
+  try {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+      return res.status(400).json({ message: "Invalid product id" });
+    }
+
+    const product = await Product.findById(req.params.id);
+
+    if (product) {
+      await product.deleteOne();
+      res.json({ message: "product removed" });
+    } else {
+      res.status(404).json({ message: "product not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "server error" });
+  }
+};
+
+module.exports = {
+  getproducts,
+  getproductbyid,
+  createproduct,
+  updateproduct,
+  deleteproduct
+};
